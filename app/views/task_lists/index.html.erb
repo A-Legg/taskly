@@ -1,9 +1,14 @@
-<h1>My Lists</h1>
+<h1>My Lists  <a href="/task_lists/new">+ Add Task List</a></h1>
 
-<% @task_lists.each do |task_list| %>
+
+
+
+<h2>Work List</h2>
+
+  <% @task_lists.each do |task_list| %>
 
   <section class="task-list">
-    <h1><%= task_list.name %></h1>
+    <h1><%= task_list.name %> <a href="/task_lists/<%= task_list.id %>/tasks/new"> new task </a> or  <a href="/task_lists/<%= task_list.id %>/edit">edit</a></h1>
   </section>
 
 <% end %>

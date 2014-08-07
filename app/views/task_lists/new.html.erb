@@ -1,0 +1,53 @@
+<h1>Add a task list</h1>
+
+<p>Name</p>
+
+
+<%= form_for @task_lists, url: task_lists_path do |f| %>
+
+  <% if @task_lists.errors.any?  %>
+    <div class="errors">
+      <p>Your task list could not be created</p>
+    </div>
+      <% end %>
+
+
+
+
+    <div>
+    <%= f.text_field :name, autofocus: true %>
+    </div>
+  <div>
+    <%= f.submit "Create task list" %>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

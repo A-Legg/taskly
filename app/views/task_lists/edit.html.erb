@@ -1,0 +1,22 @@
+
+<h1>Edit a task list</h1>
+
+
+<%= form_for @task_lists, url: "edit" do |f| %>
+
+  <% if @task_lists.errors.any?  %>
+    <div class="errors">
+      <p>Your task list could not be updated</p>
+    </div>
+  <% end %>
+
+
+
+
+  <div>
+    <%= f.text_field :name, autofocus: true %>
+  </div>
+  <div>
+    <%= f.submit "Edit task list" %>
+  </div>
+<% end %>
