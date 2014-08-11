@@ -7,7 +7,7 @@ class TasksController < ApplicationController
   def new_task
     @task_lists = TaskList.find(params[:id])
     @task = Task.new
-    @task.list_id = params[:id]
+    @task.task_list_id = params[:id]
   end
 
   def create
@@ -18,8 +18,8 @@ class TasksController < ApplicationController
 
     @tasks = Task.create(
                           description: params[:task][:description],
-                          list_id: params[:id],
-                          date: Date.new(params[:date]['year'].to_i, params[:date]['month'].to_i, params[:date]['day'].to_i)
+                          task_list_id: params[:id],
+                          date: Date.new(params[:date]['date(1i)'].to_i, params[:date]['date(2i)'].to_i, params[:date]['date(3i)'].to_i)
     )
 
 

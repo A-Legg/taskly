@@ -2,6 +2,7 @@ class TaskListsController < ApplicationController
 
   def index
     @task_lists = TaskList.order(:name)
+
   end
 
   def new
@@ -31,8 +32,6 @@ class TaskListsController < ApplicationController
     @task_lists.name = params[:task_list][:name]
     @task_lists.save
     redirect_to '/'
-
-
   end
 
 
