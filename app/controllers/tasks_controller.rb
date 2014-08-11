@@ -14,10 +14,18 @@ class TasksController < ApplicationController
 
     @task_lists = TaskList.find(params[:id])
     @tasks = Task.new
-    @tasks.list_id = params[:id]
 
-    @tasks.description = params[:task][:description]
-    @tasks.date = Date.new(params["date"]["year"].to_i, params["date"]["month"].to_i, params["date"]["day"].to_i)
+
+    @tasks = Task.create(
+                          description: params[:task][:description],
+                          list_id: params[:id],
+                          date: Date.new(params[:date]['year'].to_i, params[:date]['month'].to_i, params[:date]['day'].to_i)
+    )
+
+
+
+
+
     if @tasks.save
       redirect_to '/'
     else

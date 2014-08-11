@@ -4,11 +4,10 @@
 
   <% if @task.errors.any? %>
     <div class="errors">
-      <% @tasks.errors.full_messages.each do |message| %>
-        <li><% message %></li>
-     </div>
+      <p>Your task could not be created</p>
+    </div>
   <% end %>
-  <% end %>
+
 
   <p>Description</p>
   <div>
@@ -16,7 +15,7 @@
     <%= f.text_field :description, autofocus: true %>
   </div>
   <div>
-    <%= select_date Date.today, prefix: :date %>
+    <%= f.date_select :date, prefix: :date %>
   </div>
   <div>
     <%= f.hidden_field :list_id %>
