@@ -10,9 +10,11 @@
   <section class="task-list">
     <h1><%= task_list.name %> <a href="/task_lists/<%= task_list.id %>/tasks/new"> new task </a> or  <a href="/task_lists/<%= task_list.id %>/edit">edit</a></h1>
     <ul><% task_list.tasks.each do |task| %>
-        <li><%= task.description %></li> </ul>
+        <li><%= task.description  %> <%= link_to "Complete", "/task_lists/#{task_list.id}/tasks/#{task.id}" %> <%= link_to "Delete", "/task_lists/#{task_list.id}/tasks/#{task.id}", :method => :delete %></li> </ul>
         <% end %>
   </section>
 
 
 <% end %>
+
+
