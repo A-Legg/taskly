@@ -1,0 +1,15 @@
+<h1><%= @task_list.name %> Completed</h1>
+
+
+
+
+
+  <section class="task-list">
+
+    <ul><% @task_list.tasks.order(:id).each do |task| %>
+        <li><%= task.description if task.complete == true %>  <%= link_to "Delete", "/task_lists/#{@task_list.id}/tasks/#{task.id}", :method => :delete %> </li> </ul>
+      <% end %>
+      </section>
+
+
+

@@ -15,4 +15,8 @@ Rails.application.routes.draw do
   post "task_lists/:id/tasks/new" => "tasks#create", as: :create
   delete "task_lists/:task_list_id/tasks/:id" => "tasks#destroy"
 
+  patch "task_lists/:task_list_id/tasks/:id/edit" => "tasks#edit"
+
+  get "task_lists/:id/completed" => "task_lists#completed"
+
 end

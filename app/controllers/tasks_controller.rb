@@ -38,8 +38,12 @@ class TasksController < ApplicationController
   end
 
   def edit
-    @task = Task.find(params[:id]).update[complete: "t"]
-    redirect '/'
+    @task = Task.find(params[:id])
+    @task.update(
+      complete: true
+    )
+    redirect_to '/'
+
   end
 end
 

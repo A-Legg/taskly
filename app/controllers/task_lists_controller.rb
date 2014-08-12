@@ -34,6 +34,8 @@ class TaskListsController < ApplicationController
     redirect_to '/'
   end
 
-
+  def completed
+    @task_list = TaskList.find(params[:id])
+  end
 
 end
